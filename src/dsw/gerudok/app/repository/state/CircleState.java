@@ -1,0 +1,28 @@
+package dsw.gerudok.app.repository.state;
+
+import dsw.gerudok.app.gui.swing.tree.model.RuTreeItem;
+import dsw.gerudok.app.gui.swing.view.MainFrame;
+import dsw.gerudok.app.repository.Page;
+import dsw.gerudok.app.repository.Slot;
+import dsw.gerudok.app.repository.SlotCircle;
+import dsw.gerudok.app.repository.factory.CircleFactory;
+import dsw.gerudok.app.repository.factory.SlotFactory;
+import dsw.gerudok.app.repository.slotHandler.SlotHandler;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+
+public class CircleState extends State{
+    private Page med; //save the Mediator
+    SlotHandler slotHandler;
+    public CircleState(Page md) {
+        slotHandler = new SlotHandler();
+        med = md;
+    }
+
+
+    public void mousePressed(MouseEvent e) {
+        slotHandler.circlePressed(e, med);
+    }
+}
